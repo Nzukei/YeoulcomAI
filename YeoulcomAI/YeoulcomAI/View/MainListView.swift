@@ -18,7 +18,7 @@ struct MainListView: View {
                     Section {
                         NavigationLink {
                             ZStack {
-                                MyWebView(urlToLoad: "https://04abd68b9234df0e.gradio.app/")
+                                MyWebView(urlToLoad: "https://02f98a5530432c17.gradio.app/")
                             }
                         } label: {
                             HStack {
@@ -42,45 +42,71 @@ struct MainListView: View {
                     }
                     
                     Section {
-                        ScrollView {
-                            VStack(alignment: .leading, spacing: 3) {
-                                Text("AI가 만든 이미지들")
-                                    .font(.system(size: 20))
-                                    .fontWeight(.bold)
+                        HStack {
+                            NavigationLink {
                                 
-                                ScrollView(.horizontal, showsIndicators: false, content: {
-                                    HStack {
-                                        ForEach(1..<9) {
-                                            Image("sample\($0)")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: 300, height: 300)
-                                                .shadow(color: .black, radius: 5)
-                                                .cornerRadius(6)
-                                        }
-                                    }
-                                })
+                            } label: {
+                                Image(systemName: "hand.raised.brakesignal")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 40, height: 40)
+                                    .padding(.all, 10)
+                                    .clipShape(Circle())
+                                
+                                VStack(alignment: .leading, spacing: 3) {
+                                    Text("손동작 인식하기")
+                                        .font(.system(size: 24))
+                                        .fontWeight(.bold)
+                                    
+                                    Text("카메라 앞에서 손동작 인식하기")
+                                        .font(.system(size: 14))
+                                }
+                            }
+                        }
+                    }
+                    
+                    Section {
+                        HStack {
+                            NavigationLink {
+                                
+                            } label: {
+                                Image(systemName: "figure.walk")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 40, height: 40)
+                                    .padding(.all, 10)
+                                    .clipShape(Circle())
+                                
+                                VStack(alignment: .leading, spacing: 3) {
+                                    Text("행동 인식하기")
+                                        .font(.system(size: 24))
+                                        .fontWeight(.bold)
+                                    
+                                    Text("카메라 앞에서 행동 인식하기")
+                                        .font(.system(size: 14))
+                                }
                             }
                         }
                     }
                     
                     Section {
                         ZStack(alignment:.center) {
-                            Text("AI의 무궁무진한 발전")                                .opacity(0.4)
+                            Text("AI의 무궁무진한 발전")
+                                .opacity(0.4)
                                 .padding()
                             
                             NavigationLink {
-                                Button {
-                                    showWiki = true
-                                } label: {
-                                    MyWebView(urlToLoad: "https://namu.wiki/w/Stable%20Diffusion")
-                                }
+                                AutoScrolling()
                             } label: {
-                                LottieView(jsonName: "IPA")
-                                    .frame(width: 10000 , height: 100)
+                                HStack {
+                                    Spacer(minLength: 20)
+                                    LottieView(jsonName: "IPA")
+                                        .frame(width: 10000 , height: 100)
+                                }
                             }
                         }
                     }
+                    
                 }
                 .navigationTitle("Yeoulcom AI")
             }

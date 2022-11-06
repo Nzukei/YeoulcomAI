@@ -16,7 +16,6 @@ struct ContentView: View {
         ZStack {
             MainListView()
             
-            
             if !isContentReady {
                 LottieView()
                     .transition(.slide)
