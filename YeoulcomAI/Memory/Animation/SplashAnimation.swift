@@ -42,6 +42,8 @@ struct LottieView: UIViewRepresentable {
 
         animationView.translatesAutoresizingMaskIntoConstraints = false
         
+        animationView.backgroundBehavior = .pauseAndRestore
+        
         view.addSubview(animationView)
         
         NSLayoutConstraint.activate([

@@ -18,7 +18,7 @@ struct MainListView: View {
                     Section {
                         NavigationLink {
                             ZStack {
-                                MyWebView(urlToLoad: "https://330d7544f4bf6c52.gradio.app/")
+                                MyWebView(urlToLoad: "https://04abd68b9234df0e.gradio.app/")
                             }
                         } label: {
                             HStack {
@@ -66,23 +66,18 @@ struct MainListView: View {
                     
                     Section {
                         ZStack(alignment:.center) {
-                            Text("AI의 무궁무진한 발전")
-                                .opacity(0.4)
+                            Text("AI의 무궁무진한 발전")                                .opacity(0.4)
                                 .padding()
                             
                             NavigationLink {
                                 Button {
                                     showWiki = true
                                 } label: {
-                                    MyWebView(urlToLoad: "https://namu.wiki/w/Stable%20Diffusion")
+                                    MyWebView(urlToLoad: "https://en.wikipedia.org/wiki/Stable_Diffusion")
                                 }
                             } label: {
-                                if showWiki {
-                                    LottieView(jsonName: "IPA")
-                                        .frame(width: 2000 , height: 100)
-                                }
                                 LottieView(jsonName: "IPA")
-                                    .frame(width: 2000 , height: 100)
+                                    .frame(width: 10000 , height: 100)
                             }
                         }
                     }
