@@ -46,7 +46,7 @@ struct MainListView: View {
                             NavigationLink {
                                 
                             } label: {
-                                Image(systemName: "hand.raised.brakesignal")
+                                Image(systemName: "facemask")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 40, height: 40)
@@ -54,11 +54,11 @@ struct MainListView: View {
                                     .clipShape(Circle())
                                 
                                 VStack(alignment: .leading, spacing: 3) {
-                                    Text("손동작 인식하기")
+                                    Text("마스크 인식하기")
                                         .font(.system(size: 24))
                                         .fontWeight(.bold)
                                     
-                                    Text("카메라 앞에서 손동작 인식하기")
+                                    Text("카메라 앞에서 마스크 인식하기")
                                         .font(.system(size: 14))
                                 }
                             }
@@ -106,7 +106,6 @@ struct MainListView: View {
                             }
                         }
                     }
-                    
                 }
                 .navigationTitle("Yeoulcom AI")
             }
