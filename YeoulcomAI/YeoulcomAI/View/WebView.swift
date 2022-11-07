@@ -2,7 +2,6 @@ import SwiftUI
 import WebKit
  
 struct MyWebView: UIViewRepresentable {
-   
     
     var urlToLoad: String
     

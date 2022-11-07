@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainListView: View {
     
+    @State var isContentReady: Bool = false
     @State private var showWiki = false
     
     var body: some View {
@@ -39,14 +40,12 @@ struct MainListView: View {
                                 }
                             }
                         }
-                    }
-                    
-                    Section {
+                        
                         HStack {
                             NavigationLink {
-                                
+                                MyWebView(urlToLoad: "http://192.168.219.100:8501/")
                             } label: {
-                                Image(systemName: "facemask")
+                                Image(systemName: "text.word.spacing")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 40, height: 40)
@@ -54,18 +53,21 @@ struct MainListView: View {
                                     .clipShape(Circle())
                                 
                                 VStack(alignment: .leading, spacing: 3) {
-                                    Text("마스크 인식하기")
+                                    Text("문장 만들기")
                                         .font(.system(size: 24))
                                         .fontWeight(.bold)
                                     
-                                    Text("카메라 앞에서 마스크 인식하기")
+                                    Text("단어를 선택해 문장 만들어보기")
                                         .font(.system(size: 14))
                                 }
                             }
+                            .onAppear{
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                                    withAnimation{isContentReady.toggle()}
+                                })
+                            }
                         }
-                    }
-                    
-                    Section {
+                        
                         HStack {
                             NavigationLink {
                                 

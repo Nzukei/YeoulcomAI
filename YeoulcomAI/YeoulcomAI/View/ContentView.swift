@@ -18,7 +18,7 @@ struct ContentView: View {
             
             if !isContentReady {
                 LottieView()
-                    .transition(.slide)
+                    .transition(.opacity)
                     .background(Color.white.edgesIgnoringSafeArea(.all))
             }
         }
